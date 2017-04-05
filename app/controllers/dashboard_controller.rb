@@ -1,7 +1,7 @@
 class DashboardController < ApplicationController
     before_action :authenticate_user!, only: [:login]
   
-  def login
+  #def login
     #user = User.find(1)
   	#user = User.find_by(userName: params[:session][:name].downcase)
 
@@ -15,19 +15,19 @@ class DashboardController < ApplicationController
   	#	render 'login'
   	#end
 
-  end
+  #end
 
   def landingPage
-	   #@user = User.find(params[:id])
+	   @user = User.find(params[:id])
 
   end
 
   def courseDashboard
   end
 
-  def destroy
+  #def destroy
   	#log_out
-  	redirect_to login_url
-  end
+  	#redirect_to login_url
+  #end
 
 end

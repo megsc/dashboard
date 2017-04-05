@@ -1,4 +1,10 @@
 <h1>Dashboard#landingPage</h1>
 <p>Find me in app/views/dashboard/landingPage.html.erb</p>
 
-<%#= @user.userName %>
+
+
+<%= link_to "Logout", logout_path, method: :delete %>
+
+<%= link_to "", landing_path, id: :id %>
+
+<%= @user.userName %>
