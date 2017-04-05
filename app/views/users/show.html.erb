@@ -1,18 +1,20 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Userid:</strong>
-  <%= @user.userID %>
-</p>
 
 <p>
-  <strong>Username:</strong>
+  <strong>Name:</strong>
   <%= @user.userName %>
 </p>
 
 <p>
-  <strong>Password:</strong>
-  <%= @user.password %>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+
+
+<p>
+  <strong>Password digest:</strong>
+  <%= @user.password_digest %>
 </p>
 
 <p>

@@ -11,10 +11,6 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :userID %>
-    <%= f.text_field :userID %>
-  </div>
 
   <div class="field">
     <%= f.label :userName %>
@@ -22,8 +18,18 @@
   </div>
 
   <div class="field">
+    <%= f.label :email %>
+    <%= f.email_field :email %>
+  </div>
+
+  <div class="field">
     <%= f.label :password %>
-    <%= f.text_field :password %>
+    <%= f.password_field :password %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation %>
   </div>
 
   <div class="field">
