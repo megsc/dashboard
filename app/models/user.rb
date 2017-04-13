@@ -5,6 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable #:authentication_keys => [ :login ]
 	 #validates :userName, presence: true, :uniqueness => { :case_sensitive => false }
 
+	belongs_to :course, optional: true
+
 	 #attr_accessor :login
 	
 	# VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i

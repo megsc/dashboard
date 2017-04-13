@@ -17,12 +17,21 @@ class DashboardController < ApplicationController
 
   #end
 
-  def landingPage
-	   @user = User.find(params[:id])
+  def landingPage 
 
+     @user = User.find(params[:id])
+     @course = User.joins(:course).select("users.*,courses.*").find(params[:id])
+     #@usercourse = Course.joins(:users).all
+  
+     @testVar = User.includes(:course).all
+     console
+
+     
   end
 
   def courseDashboard
+    @user = User.find(params[:courseID])
+    #@coursecontent = Coursecontent.find(params[:courseContentID][:contentName][:contentDescription])
   end
 
   #def destroy

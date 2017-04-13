@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
-	#resources :users
+	resources :course 
+  resources :coursecontent
   
   devise_scope :user do
 	   get 'login', to: 'devise/sessions#new' 
@@ -8,6 +9,8 @@ Rails.application.routes.draw do
   end
 
 	get 'login/:id', to: 'dashboard#landingPage', as: 'landing'
+
+  #get 'landingPage/:courseID', to: 'dashboard#courseDashboard', as: 'display'
 
 	#delete 'logout', to: 'dashboard#destroy' 
 
