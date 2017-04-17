@@ -30,8 +30,8 @@ class DashboardController < ApplicationController
   end
 
   def courseDashboard
-    @user = User.find(params[:courseID])
-    #@coursecontent = Coursecontent.find(params[:courseContentID][:contentName][:contentDescription])
+    @content = Coursecontent.all
+    #@courseContent = Coursecontent.joins(:course).select("courses.*,coursecontents.*")
   end
 
   #def destroy

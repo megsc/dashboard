@@ -1,14 +1,20 @@
 Rails.application.routes.draw do
   devise_for :users
 	resources :course 
-  resources :coursecontent
+  #resources :coursecontent
   
   devise_scope :user do
 	   get 'login', to: 'devise/sessions#new' 
      delete 'logout', to: 'devise/sessions#destroy'
   end
 
+
+
 	get 'login/:id', to: 'dashboard#landingPage', as: 'landing'
+
+
+  get 'coursecontent', to: 'dashboard#courseDashboard', as: 'content' 
+
 
   #get 'landingPage/:courseID', to: 'dashboard#courseDashboard', as: 'display'
 

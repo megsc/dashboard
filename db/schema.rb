@@ -12,15 +12,15 @@
 
 ActiveRecord::Schema.define(version: 20170405014716) do
 
-  create_table "coursecontents", primary_key: "courseContentID", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string "contentName",        limit: 50, null: false
-    t.string "contentDescription", limit: 50, null: false
+  create_table "coursecontents", primary_key: "coursecontent_id", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer "course_id"
+    t.string  "content_name",        limit: 50, null: false
+    t.string  "content_description", limit: 50, null: false
+    t.index ["course_id"], name: "course_id", using: :btree
   end
 
   create_table "courses", primary_key: "course_id", id: :integer, default: 0, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string  "courseName",      limit: 50, null: false
-    t.integer "courseContentID",            null: false
-    t.index ["courseContentID"], name: "courseContentID", using: :btree
+    t.string "course_name", limit: 50, null: false
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -34,16 +34,16 @@ ActiveRecord::Schema.define(version: 20170405014716) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.string   "userID"
-    t.integer  "userAccess"
-    t.string   "userName"
+    t.string   "user_id"
+    t.integer  "user_access"
+    t.string   "user_name"
     t.integer  "course_id"
     t.index ["course_id"], name: "course_id", using: :btree
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
-    t.index ["userName"], name: "index_users_on_userName", unique: true, using: :btree
+    t.index ["user_name"], name: "index_users_on_userName", unique: true, using: :btree
   end
 
-  add_foreign_key "courses", "coursecontents", column: "courseContentID", primary_key: "courseContentID", name: "courses_ibfk_1"
+  add_foreign_key "coursecontents", "courses", primary_key: "course_id", name: "coursecontents_ibfk_1"
   add_foreign_key "users", "courses", primary_key: "course_id", name: "users_ibfk_1"
 end

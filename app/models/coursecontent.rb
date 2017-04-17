@@ -1,6 +1,6 @@
-class CourseContent < ApplicationRecord
+class Coursecontent < ApplicationRecord
 
-	validates :courseContentID, :contentName, :contentDescription, presence: true
-	has_one :course
+	validates :coursecontent_id, :content_name, :content_description, presence: true
+	belongs_to :course
 	
 end

@@ -2,15 +2,15 @@
 <p>Find me in app/views/dashboard/landingPage.html.erb</p>
 
 <%# @users.each do |user| %>
-<%= @user.userName %> is currently enrolled in:
+<%= @user.user_name %> is currently enrolled in:
 <%# end %>
 
 
 <%= @user.course_id %>
-<%= @course.courseName %>
+<%= @course.course_name %>
 
 
 <%# end %>
 <%#= link_to "Logout", logout_path, method: :delete %>
 
-<%= link_to "", landing_path, id: :id %>
+<%= link_to "Course Info", content_path %>

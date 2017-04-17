@@ -1,4 +1,13 @@
 <h1>Dashboard#courseDashboard</h1>
 <p>Find me in app/views/dashboard/courseDashboard.html.erb</p>
 
-<%#= link_to "test", display_path, courseID: :courseID %>
+<%#= @course.course_id %>
+<%#= @course.course_name %>
+
+<% @content.each do |c| %>
+
+<%= c.coursecontent_id %>
+<%= c.content_name %>
+<%= c.content_description %>
+
+<% end %>

@@ -1,6 +1,7 @@
 class Course < ApplicationRecord
 
-	validates :courseID, :courseName, :courseContentID, presence: true
+	validates :course_id, :course_name, :coursecontent_id, presence: true
 	has_many :users
+	
 	
 end
