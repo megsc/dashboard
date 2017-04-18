@@ -1,0 +1,27 @@
+<h1>Courseboard#landing</h1>
+<p>Find me in app/views/courseboard/landing.html.erb</p>
+
+<%# @users.each do |user| %>
+<%= @user.user_name %> is currently enrolled in:
+<%# end %>
+
+
+   <% if current_user.user_access == 1 %>
+    <%= @course.course_name %>
+    <%= link_to "Course Info", coursecontents_path %>
+    <%#= link_to_if (current_user.user_access == 1),'Edit', edit_course_path(@course.course_id) %>
+    <%= link_to 'Edit', edit_course_path(id: @course.course_id) %>
+    <%#= link_to_if (current_user.user_access == 1),'Destroy', course_path, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <%= link_to 'Destroy', course_path, method: :delete, data: { confirm: 'Are you sure?' } %>
+
+<%#= link_to "Logout", logout_path, method: :delete %>
+
+<%#= link_to_if (current_user.user_access == 1),'New Course', new_course_path %>
+	<%= link_to 'New', new_course_path %>
+
+	<% else %>
+	 <%= @course.course_name %>
+    <%= link_to "Course Info", coursecontents_path %>
+
+    <% end %>
+
