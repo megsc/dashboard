@@ -1,14 +1,31 @@
 
+<main>
+<div class="container">
+
+
+<div class="card">
+  <h3 class="card-header">My Course</h3>
+  <div class="card-block">
+
+
 <% if current_user.user_access == 1 %>
 
-    <h1>My Course</h1>
     <%= link_to 'Add New Course', new_course_path %>
     <br><br>
-    <strong><%= @user.user_name %> is currently enrolled in:</strong>
+    <!--<strong><%= @user.user_name %> is currently enrolled in:</strong>-->
       
-      <table>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Course number</th>
+            <th>Course name</th>
+            <th colspan="2"></th>
+          </tr>
+        </thead>
+
         <tbody>
           <tr>
+            <td><%= @course.id %></td>
             <td><%= @course.course_name %></td>
             <td><%= link_to "Course Info", coursecontents_path %></td>
             <td><%= link_to 'Edit', edit_course_path(id: @course.course_id) %></td>
@@ -18,15 +35,25 @@
       </table>
 
 
+
 <% else %>   
 
-    <h1>My Course</h1>
     <br><br>
-    <strong><%= @user.user_name %> is currently enrolled in:</strong>
+    <!--<strong><%= @user.user_name %> is currently enrolled in:</strong>-->
       
-      <table>
+
+      <table class="table">
+      <thead>
+          <tr>
+            <th>Course number</th>
+            <th>Course name</th>
+            <th colspan="2"></th>
+          </tr>
+        </thead>
+
         <tbody>
           <tr>
+            <td><%= @course.id %></td>
             <td><%= @course.course_name %></td>
             <td><%= link_to "Course Info", coursecontents_path %></td>
           </tr>
@@ -35,3 +62,7 @@
 
 <% end %>
    
+</div>
+</div>
+</div>
+</main>

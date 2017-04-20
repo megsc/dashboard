@@ -10,12 +10,40 @@
 
   <body>
   	 <header>
-    	<% if user_signed_in? %>
-    		Logged in as <%= current_user ? current_user.email : 'No user found' %>
-    		<%= link_to "Logout", destroy_user_session_path, method: :delete %>
-    	<% else %>
-    		<%= link_to "Login", new_user_session_path %>
-    	<% end %>
+    <nav class="navbar fixed-top navbar-toggleable-md navbar-light ">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <h1 class="navbar-brand mb-0">the learning centre</h1>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="nav ">
+      <% if user_signed_in? %>
+            Welcome <%= current_user.user_name %>
+            <%#= current_user ? current_user.email : 'No user found' %>
+            <%#= link_to "Logout", destroy_user_session_path, method: :delete %>
+              <li class="nav-item">
+                <a class="nav" href="#">My Profile</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav" href="#">My Grades</a>
+              </li>
+              <li class="nav-item">
+                <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "login" %>
+              </li>
+        <% else %>        
+              <li class="nav-item">
+                <a class="nav" href="#">About<span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav" href="#">Pricing</a>
+              </li>
+              <li class="nav-item">
+                <a class="login" href="#">Login</a>
+              </li>
+        <% end %>
+        </ul>
+      </div>
+    </nav>
     </header>
 
     <div>
