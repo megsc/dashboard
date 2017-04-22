@@ -5,7 +5,11 @@
 
 
 <div class="card">
-  <h3 class="card-header">Course Details<%= link_to 'Back', login_path %></h3>
+  <div class="card-header">
+    <h3 class="float-left">Course Details</h3>
+    <h3 class="float-right"><%= link_to 'Back', login_path %></h3>
+  </div>
+  
   <div class="card-block">
 
 
@@ -23,23 +27,22 @@
             <th>Course number</th>
             <th>Content name</th>
             <th>Content description</th>
-            <th colspan="3"></th>
           </tr>
         </thead>
-
+    
         <tbody>
+          <% @coursecontents.each do |coursecontent| %>
           <tr>
-            <% @coursecontents.each do |coursecontent| %>
-            <td><%= coursecontent.course_id %></td>
+            <td><%=coursecontent.course_id %></td>
             <td><%= coursecontent.content_name %></td>
             <td><%= coursecontent.content_description %></td>
             <td><%= link_to 'Edit', edit_coursecontent_path(coursecontent) %></td>
             <td><%= link_to 'Destroy', coursecontent, method: :delete, data: { confirm: 'Are you sure?' } %></td>  
           </tr>
+          <% end %>
         </tbody>
       </table>
-      <% end %> 
-
+      
 <% else %>    
 
 
@@ -54,15 +57,16 @@
         </thead>    
 
         <tbody>
-          <tr>
-            <% @coursecontents.each do |coursecontent| %>
+          <% @coursecontents.each do |coursecontent| %>
+          <tr>  
             <td><%= coursecontent.course_id %></td>
             <td><%= coursecontent.content_name %></td>
             <td><%= coursecontent.content_description %></td>
           </tr>
+          <% end %>
         </tbody>
       </table>
-    <% end %>
+    
 
 <% end %>
 
