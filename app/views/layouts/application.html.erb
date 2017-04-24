@@ -9,6 +9,7 @@
   </head>
 
   <body>
+    <div id="wrapper">
   	 <header>
     <nav class="navbar fixed-top navbar-toggleable-md navbar-light justify-content-center">
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -18,7 +19,7 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="nav navbar-nav mx-auto w-100 justify-content-center">
           <% if user_signed_in? %>
-            Welcome <%= current_user.user_name %>
+          <h5>Welcome <%= current_user.user_name %></h5>
             <%#= current_user ? current_user.email : 'No user found' %>
             <%#= link_to "Logout", destroy_user_session_path, method: :delete %>
         </ul>
@@ -61,5 +62,11 @@
     	<% end %>
     </div>
     <%= yield %>
+
+    <footer class="navbar fixed-bottom navbar-toggleable-md navbar-light justify-content-center">Copyright © 2017 the learning centre</footer>
+
+  </div> 
+  
   </body>
+  
 </html>

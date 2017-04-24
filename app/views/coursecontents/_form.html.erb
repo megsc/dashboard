@@ -1,5 +1,6 @@
-<%= form_for(coursecontent) do |f| %>
-  <% if coursecontent.errors.any? %>
+  <%= form_for(coursecontent) do |f| %></h3>
+
+    <% if coursecontent.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(coursecontent.errors.count, "error") %> prohibited this coursecontent from being saved:</h2>
 
@@ -8,28 +9,33 @@
         <li><%= message %></li>
       <% end %>
       </ul>
+      
     </div>
   <% end %>
+  
+    <div class="table-responsive">
+    <table class="table">
+        <thead>
+          <tr>
+            <th><%= f.label :course_id %></th>
+            <th><%= f.label :content_name %></th>
+            <th><%= f.label :content_description %></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td><%= f.number_field :course_id %></td>
+            <td><%= f.text_field :content_name %></td>
+            <td><%= f.text_field :content_description %></td>
+            <td><%= f.submit %></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
 
-
-
-  <div class="field">
-    <%= f.label :course_id %>
-    <%= f.number_field :course_id %>
-  </div>
-
-  <div class="field">
-    <%= f.label :content_name %>
-    <%= f.text_field :content_name %>
-  </div>
-
-  <div class="field">
-    <%= f.label :content_description %>
-    <%= f.text_field :content_description %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
 <% end %>
+
+

@@ -1,5 +1,17 @@
-<h1>New Course Content</h1>
+<main>
+<div class="container">
 
-<%= render 'form', coursecontent: @coursecontent %>
+<div class="card">
+  <div class="card-header">
+    <h3 class="float-left">New Course Content</h3>
+    <h3 class="float-right"><%= link_to 'Back', coursecontents_path, class: "title" %></h3>
+</div>
+   
 
-<%= link_to 'Back', coursecontents_path %>
+  <div class="card-block">
+
+	<%= render 'form', coursecontent: @coursecontent %>
+
+</div>
+</main>
+

@@ -1,19 +1,39 @@
+<main>
+<div class="container">
+
+<div class="card">
+  <div class="card-header">
+    <h3 class="float-left">Updated Course Content</h3>
+    <h3 class="float-right"><%= link_to 'Edit', edit_coursecontent_path(@coursecontent), class: "title" %></h3>
+    <h3 class="float-right"> | </h3>
+    <h3 class="float-right"><%= link_to 'Back', coursecontents_path, class: "title" %></h3>
+</div>
+   
+
+  <div class="card-block">
+
+  <div class="table-responsive">
+	<table class="table">
+        <thead>
+          <tr>
+            <th>Course</th>
+            <th>Content name</th>
+            <th>Content description</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td><%= @coursecontent.course_id %></td>
+            <td><%= @coursecontent.content_name %></td>
+            <td><%= @coursecontent.content_description %></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
 
-<p>
-  <strong>Course:</strong>
-  <%= @coursecontent.course_id %>
-</p>
+</div>
+</main>
 
-<p>
-  <strong>Content name:</strong>
-  <%= @coursecontent.content_name %>
-</p>
 
-<p>
-  <strong>Content description:</strong>
-  <%= @coursecontent.content_description %>
-</p>
-
-<%= link_to 'Edit', edit_coursecontent_path(@coursecontent) %> |
-<%= link_to 'Back', coursecontents_path %>

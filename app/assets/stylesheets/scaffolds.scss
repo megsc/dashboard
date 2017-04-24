@@ -1,7 +1,7 @@
 body {
   background-color: #fff;
   color: #333;
-  font-family: helvetica, sans-serif;
+  //font-family: helvetica, sans-serif;
   //font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
@@ -9,7 +9,7 @@ body {
 }
 
 p, ol, ul, td {
-  font-family: helvetica, sans-serif;
+  //font-family: helvetica, sans-serif;
   //font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
@@ -22,8 +22,8 @@ pre {
   font-size: 11px;
 }
 
-a {
-  background-color: white;
+//a {
+  /*background-color: white;
   color: black;
 
   &:visited {
@@ -34,7 +34,7 @@ a {
     background-color: white;
     color: brown;
   }
-}
+}*/
 
 th {
   padding-bottom: 5px;

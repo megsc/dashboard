@@ -24,7 +24,10 @@ body {
   //font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
-  margin: 33px;
+  background-repeat: no-repeat;
+  //background-size: cover;
+  //margin: 33px;
+  max-width: 100%;
 
 }
 
@@ -32,6 +35,12 @@ header {
 	background-color: #fff;
 	height: 8%;
 	max-width: 100%;
+}
+
+footer {
+  background-color: #fff;
+  //height: 8%;
+  max-width: 100%;
 }
 
 
@@ -43,7 +52,6 @@ nav {
 }
 
 
-
 a.login:link, a.login:visited {
     background-color: white;
     color: brown;
@@ -52,12 +60,14 @@ a.login:link, a.login:visited {
     text-align: center;
     text-decoration: none;
     display: inline-block;
+
 }
 
 a.login:hover, a.login:active {
     background-color: brown;
     color: white;
-}
+  }
+
 
 a.nav:link, a.nav:visited {
     background-color: white;
@@ -71,8 +81,31 @@ a.nav:link, a.nav:visited {
 a.nav:hover, a.nav:active {
     background-color: white;
     color: brown;
+  }
+
+a.option:link, a.option:visited {
+    background-color: white;
+    color: brown;
+    text-decoration: none;
+    display: inline-block;
 }
 
+a.option:hover, a.option:active {
+    background-color: white;
+    color: black;
+  }    
+
+a.title:link, a.title:visited {
+    background-color: white;
+    color: brown;
+    text-decoration: none;
+    display: inline-block;  
+}
+
+a.title:hover, a.title:active {
+    background-color: white;
+    color: black;
+  }  
 
 main {
  background-color: #fff;
@@ -80,6 +113,14 @@ main {
  padding: 3%;
  margin: auto;
  margin-top: 10%;
+
  
+}
+
+
+#wrapper {
+  max-width: 90%;
+  margin: 0px auto;
+
 }
 
