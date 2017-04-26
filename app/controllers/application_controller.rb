@@ -5,13 +5,10 @@ class ApplicationController < ActionController::Base
   	landing_path(current_user.id)
   end
 
-
   private
-
 
   def after_sign_out_path_for(resource_or_scope)
   	login_path
   end
 
-  
 end

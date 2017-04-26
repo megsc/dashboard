@@ -1,0 +1,41 @@
+<header>
+    <nav class="navbar fixed-top navbar-toggleable-md navbar-light justify-content-center">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <h1 class="navbar-brand d-flex w-50 mr-auto">the learning centre</h1> 
+      <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="nav navbar-nav mx-auto w-100 justify-content-center">
+        <% if user_signed_in? %>
+          <h5>Welcome <%= current_user.user_name %></h5>
+            <%#= current_user ? current_user.email : 'No user found' %>
+            <%#= link_to "Logout", destroy_user_session_path, method: :delete %>
+          </ul>
+          <ul class="nav navbar-nav ml-auto w-100 justify-content-end">
+              <li class="nav-item">
+                <a class="nav" href="#">My Profile</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav" href="#">My Grades</a>
+              </li>
+              <li class="nav-item">
+                <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "login" %>
+              </li>
+        </ul>
+
+        <% else %>  
+          <ul class="nav nav navbar-nav ml-auto w-100 justify-content-end">      
+              <li class="nav-item">
+                <a class="nav" href="#">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav" href="#">Pricing</a>
+              </li>
+              <li class="nav-item">
+                <a class="login" href="#">Login</a>
+              </li>
+            </ul>
+        <% end %>
+      </div>
+    </nav>
+  </header>
