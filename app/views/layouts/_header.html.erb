@@ -1,3 +1,4 @@
+<!-- header styling and text for each page -->
 <header>
     <nav class="navbar fixed-top navbar-toggleable-md navbar-light justify-content-center">
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -6,6 +7,8 @@
       <h1 class="navbar-brand d-flex w-50 mr-auto">the learning centre</h1> 
       <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="nav navbar-nav mx-auto w-100 justify-content-center">
+        
+        <!-- nav bar if user is logged in - shows name and logout option -->
         <% if user_signed_in? %>
           <h5>Welcome <%= current_user.user_name %></h5>
             <%#= current_user ? current_user.email : 'No user found' %>
@@ -23,6 +26,7 @@
               </li>
         </ul>
 
+        <!-- nav bar if user is not logged in - shows login option -->
         <% else %>  
           <ul class="nav nav navbar-nav ml-auto w-100 justify-content-end">      
               <li class="nav-item">

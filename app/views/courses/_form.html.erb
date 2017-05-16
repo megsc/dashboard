@@ -1,3 +1,4 @@
+<!-- courses form for add or edit -->
 <%= form_for(course) do |f| %>
   <% if course.errors.any? %>
     <div id="error_explanation">
@@ -11,6 +12,7 @@
     </div>
   <% end %>
 
+  <!-- table for form to edit or add courses -->
   <div class="table-responsive">
   <table class="table">
 

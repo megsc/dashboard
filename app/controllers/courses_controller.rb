@@ -1,5 +1,6 @@
 class CoursesController < ApplicationController
   before_action :set_course, only: [:show, :edit, :update, :destroy]
+  rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
 
   # GET /courses
   # GET /courses.json
@@ -23,6 +24,7 @@ class CoursesController < ApplicationController
 
   # POST /courses
   # POST /courses.json
+  # controller action to create new course. @course requires all the params to be saved.
   def create
     @course = Course.new(course_params)
 
@@ -39,6 +41,7 @@ class CoursesController < ApplicationController
 
   # PATCH/PUT /courses/1
   # PATCH/PUT /courses/1.json
+  # controller action to edit a course. @course requires all the params to be saved.
   def update
     respond_to do |format|
       if @course.update(course_params)
@@ -68,6 +71,7 @@ class CoursesController < ApplicationController
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
+    #parameters required for course content table in the database
     def course_params
       params.require(:course).permit(:course_name)
     end

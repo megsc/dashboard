@@ -15,12 +15,15 @@
 
 <%#= link_to 'Back', login_path %>
       
+
+<!-- display to user with user access 1 which allows for add, edit or destroy -->
 <% if current_user.user_access == 1 %>
   
    
     <%= link_to 'Add Course Content', new_coursecontent_path, class: "option" %>
     <br><br>
 
+      <!-- table to display course contents to user -->
       <div class="table-responsive">
       <table class="table table-hover">
         <thead>
@@ -32,9 +35,10 @@
         </thead>
     
         <tbody>
+          <!-- displaying course contents using variable from controller. loops through array to display all content -->
           <% @coursecontents.each do |coursecontent| %>
           <tr>
-            <td><%=coursecontent.course_id %></td>
+            <td><%= coursecontent.course_id %></td>
             <td><%= coursecontent.content_name %></td>
             <td><%= coursecontent.content_description %></td>
             <td><%= link_to 'Edit', edit_coursecontent_path(coursecontent), class: "option" %></td>
@@ -44,9 +48,10 @@
         </tbody>
       </table>
     </div>
-      
-<% else %>    
 
+<!-- display to user with user access 2 which allows for view only -->
+<% else %>    
+      <!-- table to display course contents to user -->
       <div class="table-responsive">
       <table class="table table-hover">
         <thead>
@@ -58,6 +63,7 @@
         </thead>    
 
         <tbody>
+          <!-- displaying course contents using variable from controller. loops through array to display all content -->
           <% @coursecontents.each do |coursecontent| %>
           <tr>  
             <td><%= coursecontent.course_id %></td>

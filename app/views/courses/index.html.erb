@@ -1,6 +1,7 @@
 
 <h1>Courses</h1>
 
+<!-- table to display courses to user -->
 <table>
   <thead>
     <tr>
@@ -11,6 +12,7 @@
 
 
       <tbody>
+        <!-- dislaying course information from controller variable -->
         <% @courses.each do |course| %>
           <tr>
             <td><%= course.course_name %></td>
